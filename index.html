@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+    <html lang="{{ app()->getLocale() }}">
+    <head>
+        <meta charset="utf-8">
+		<title>Game of life</title>
+		<link href="life.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="menu">
+			<div class="title">LIFE GAME</div>
+			<div><input id="file_input" class="rounded" type="file" onchange="readFile(this)"></div>
+			<div id="menu_buttons">
+				<button id="btn_auto" class="rounded" disabled onclick="next_generation_auto()">Start auto life</button>
+				<button id="btn_auto_stop" class="rounded" onclick="next_generation_auto_stop()">Stop auto life</button>
+				<button id="btn_next" class="rounded" disabled onclick="next_generation()">Next generation</button>
+				<button id="btn_prev" class="rounded" disabled onclick="prev_generation()">Previous generation</button>
+			</div>
+			<div id="count">
+				<div>Genreation:</div>
+				<div>123</div>
+			</div>
+		</div>
+		<div class="game-frame">
+			<div id="message" class="message rounded"></div>
+			<div class="loader"></div>
+			<div class="game" id="game"></div>
+		</div>
+	</body>
+	<script src="life.js"></script>
+</html>
